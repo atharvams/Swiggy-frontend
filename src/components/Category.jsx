@@ -20,7 +20,7 @@ function Category() {
   }
 
   async function fetchCategory() {
-    const data = await fetch("http://localhost:5000/categories");
+    const data = await fetch(String(import.meta.env.VITE_API_URL)+"categories");
     const jsonData = await data.json();
     setCategories(jsonData);
   }
@@ -55,10 +55,11 @@ function Category() {
               style={{
                 transform: `translateX(-${number * 100}%)`,
               }}
+              key={index}
               className="w-[150px] shrink-0 duration-500"
             >
               <img
-                src={"http://localhost:5000/images/" + item.image}
+                src={String(import.meta.env.VITE_API_URL)+"images/" + item.image}
                 alt={item.path}
               />
             </div>

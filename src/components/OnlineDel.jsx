@@ -6,7 +6,7 @@ function OnlineDel() {
   const [data, setData] = useState([]);
 
   async function getTopRestaurants() {
-    const apiData = await fetch("http://localhost:5000/top-restaurant-chains");
+    const apiData = await fetch(String(import.meta.env.VITE_API_URL)+"top-restaurant-chains");
     const jsonData = await apiData.json();
     setData(jsonData);
   }

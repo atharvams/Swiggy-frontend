@@ -7,11 +7,13 @@ function TopHotels() {
   const [number, setNumber] = useState(0);
 
   async function getTopRestaurants() {
-    const apiData = await fetch("http://localhost:5000/top-restaurant-chains");
+    const apiData = await fetch(
+      String(import.meta.env.VITE_API_URL) + "top-restaurant-chains"
+    );
     const jsonData = await apiData.json();
     setData(jsonData);
   }
-  
+
   function slideLeft() {
     if (number === 0) {
       return;
@@ -37,22 +39,31 @@ function TopHotels() {
           Top restaurant chains in Nanded
         </div>
         <div className="flex ">
-          <div onClick={() => slideLeft()} className="flex justify-center items-center w-[35px] h-[35px] rounded-full bg-[#02060c26] mx-2 cursor-pointer">
+          <div
+            onClick={() => slideLeft()}
+            className="flex justify-center items-center w-[35px] h-[35px] rounded-full bg-[#02060c26] mx-2 cursor-pointer"
+          >
             <FaArrowLeft />
           </div>
-          <div onClick={() => slideRight()} className=" flex justify-center items-center w-[35px] h-[35px] rounded-full bg-[#02060c26] mx-2 cursor-pointer">
+          <div
+            onClick={() => slideRight()}
+            className=" flex justify-center items-center w-[35px] h-[35px] rounded-full bg-[#02060c26] mx-2 cursor-pointer"
+          >
             <FaArrowRight />
           </div>
         </div>
       </div>
       <div className="flex gap-8 overflow-hidden mt-10">
-            {
-                data.map((item, index)=>{
-                    return(
-                        <Card {...item} key={index} width="w-full  md:w-[270px]" number={number}/>
-                    )
-                })
-            }
+        {data.map((item, index) => {
+          return (
+            <Card
+              {...item}
+              key={index}
+              width="w-full  md:w-[270px]"
+              number={number}
+            />
+          );
+        })}
       </div>
       <hr className="mt-10 border-[1px]" />
     </div>
