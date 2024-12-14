@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import URL from "../urlConfig";
 
 function Category() {
   const [categories, setCategories] = useState([]);
@@ -20,7 +21,7 @@ function Category() {
   }
 
   async function fetchCategory() {
-    const data = await fetch("http://localhost:5000/categories");
+    const data = await fetch(URL.API_URL+"categories");
     const jsonData = await data.json();
     setCategories(jsonData);
   }
@@ -58,7 +59,7 @@ function Category() {
               className="w-[150px] shrink-0 duration-500"
             >
               <img
-                src={"http://localhost:5000/images/" + item.image}
+                src={URL.API_URL+"images/" + item.image}
                 alt={item.path}
               />
             </div>

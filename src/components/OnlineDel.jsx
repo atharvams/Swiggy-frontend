@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Card from "./Card";
+import URL from "../urlConfig";
 
 function OnlineDel() {
   const [data, setData] = useState([]);
 
   async function getTopRestaurants() {
-    const apiData = await fetch("http://localhost:5000/top-restaurant-chains");
+    const apiData = await fetch(URL.API_URL+"top-restaurant-chains");
     const jsonData = await apiData.json();
     setData(jsonData);
   }

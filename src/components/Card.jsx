@@ -1,15 +1,19 @@
 import React from "react";
 import "../index.css";
+import URL from "../urlConfig";
 
 function Card(props) {
   return (
-    <div style={{
+    <div
+      style={{
         transform: `translateX(-${props.number * 100}%)`,
-      }} className={`${props.width} shrink-0 grow duration-500 mb-5`} >
+      }}
+      className={`${props.width} shrink-0 grow duration-500 mb-5`}
+    >
       <div className="group h-[180px] rounded-[15px] relative overflow-hidden">
         <img
           className="group-hover:scale-110 duration-100 object-cover w-full h-full"
-          src={"http://localhost:5000/images/" + props.image}
+          src={URL.API_URL + "images/" + props.image}
           alt=""
         />
         <div className="img-overlay absolute h-full w-full top-0 flex items-end pl-4 pb-2 text-white text-[25px] font-bold tracking-tighter">
@@ -20,7 +24,7 @@ function Card(props) {
         <div className="text-[20px] font-bold">{props.title}</div>
         <div className="flex items-center gap-2">
           <Star className="inline" />
-          <span >
+          <span>
             {props.minTime} - {props.maxTime} mins
           </span>
         </div>
