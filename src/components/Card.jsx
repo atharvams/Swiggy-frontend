@@ -12,7 +12,7 @@ function Card(props) {
       <div className="group h-[180px] rounded-[15px] relative overflow-hidden">
         <img
           className="group-hover:scale-110 duration-100 object-cover w-full h-full"
-          src={import.meta.env.API_URL+ "images/" + props.image}
+          src={String(import.meta.env.VITE_API_URL)+"images/" + props.image}
           alt=""
         />
         <div className="img-overlay absolute h-full w-full top-0 flex items-end pl-4 pb-2 text-white text-[25px] font-bold tracking-tighter">

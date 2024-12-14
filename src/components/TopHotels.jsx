@@ -8,7 +8,8 @@ function TopHotels() {
 
   async function getTopRestaurants() {
     const apiData = await fetch(
-      import.meta.env.API_URL + "/top-restaurant-chains"
+      String(import.meta.env.VITE_API_URL) + "top-restaurant-chains"
+
     );
     const jsonData = await apiData.json();
     console.log(jsonData);
