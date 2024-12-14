@@ -1,6 +1,5 @@
 import React from "react";
 import "../index.css";
-import URL from "../urlConfig";
 
 function Card(props) {
   return (

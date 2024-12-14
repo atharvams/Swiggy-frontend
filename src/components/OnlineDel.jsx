@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Card from "./Card";
-import URL from "../urlConfig";
+
 
 function OnlineDel() {
   const [data, setData] = useState([]);

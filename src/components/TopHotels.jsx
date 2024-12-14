@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Card from "./Card";
-import URL from "../urlConfig";
 
 function TopHotels() {
   const [data, setData] = useState([]);
