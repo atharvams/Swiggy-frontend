@@ -22,6 +22,7 @@ function Category() {
   async function fetchCategory() {
     const data = await fetch(import.meta.env.API_URL+"/categories");
     const jsonData = await data.json();
+    console.log(jsonData);
     setCategories(jsonData);
   }
 

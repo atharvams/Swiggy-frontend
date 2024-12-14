@@ -11,6 +11,7 @@ function TopHotels() {
       import.meta.env.API_URL + "/top-restaurant-chains"
     );
     const jsonData = await apiData.json();
+    console.log(jsonData);
     setData(jsonData);
   }
 
