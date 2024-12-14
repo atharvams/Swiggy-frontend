@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Card from "./Card";
+
 
 function OnlineDel() {
   const [data, setData] = useState([]);
 
   async function getTopRestaurants() {
+
     const apiData = await fetch(String(import.meta.env.VITE_API_URL)+"top-restaurant-chains");
     const jsonData = await apiData.json();
+    console.log(jsonData);
     setData(jsonData);
   }
 

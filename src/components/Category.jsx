@@ -21,7 +21,9 @@ function Category() {
 
   async function fetchCategory() {
     const data = await fetch(String(import.meta.env.VITE_API_URL)+"categories");
+
     const jsonData = await data.json();
+    console.log(jsonData);
     setCategories(jsonData);
   }
 
@@ -59,6 +61,7 @@ function Category() {
               className="w-[150px] shrink-0 duration-500"
             >
               <img
+
                 src={String(import.meta.env.VITE_API_URL)+"images/" + item.image}
                 alt={item.path}
               />

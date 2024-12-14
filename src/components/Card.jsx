@@ -3,9 +3,12 @@ import "../index.css";
 
 function Card(props) {
   return (
-    <div style={{
+    <div
+      style={{
         transform: `translateX(-${props.number * 100}%)`,
-      }} className={`${props.width} shrink-0 grow duration-500 mb-5`} >
+      }}
+      className={`${props.width} shrink-0 grow duration-500 mb-5`}
+    >
       <div className="group h-[180px] rounded-[15px] relative overflow-hidden">
         <img
           className="group-hover:scale-110 duration-100 object-cover w-full h-full"
@@ -20,7 +23,7 @@ function Card(props) {
         <div className="text-[20px] font-bold">{props.title}</div>
         <div className="flex items-center gap-2">
           <Star className="inline" />
-          <span >
+          <span>
             {props.minTime} - {props.maxTime} mins
           </span>
         </div>
